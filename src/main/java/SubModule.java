@@ -2,17 +2,16 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class MyModule {
+public class SubModule {
 
     private String name;
 
-    public MyModule(String name) {
+    public SubModule(String name) {
         this.name = name;
     }
 
     @Provides
-    public B b(A a) {
-        return new B(a, name);
+    public G g(A a, E e) {
+        return new G(name, a, e);
     }
-
 }
